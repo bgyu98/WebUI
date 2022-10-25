@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>자바스크립트 변수와 범위</title>
+	<script>
+	/* var 중심으로 확인 -> 추가로 let 확인 */
+	// 1. 글로벌변수와 지역변수
+	/*var scope = '글로벌변수';
+	function getValue(){
+		var scope = '지역변수';
+		return scope;
+	}
+	document.write(getValue() + '<br/>');	//지역변수
+	document.write(scope + '<br/>'); //글로벌변수*/
+	
+	//2. var를 사용하지 않으면 글로벌변수 취급
+	//		-> 변수선언시 var/let 꼭 쓰기
+	/* scope = '글로벌변수';
+	function getValue(){
+		scope = '지역변수';
+		test = '테스트';
+		return scope;
+	}
+	document.write(getValue() + '<br/>');	//지역변수
+	document.write(scope + '<br/>'); //지역변수
+	document.write(test + '<br/>'); //테스트 */
+	
+	//3. 지역변수 선언을 함수의 앞단에
+	var scope = '글로벌변수';
+	function getValue(){
+		document.write('<0>' + scope + '<br/>'); 
+		var scope = '지역변수';
+		return scope;
+	}
+	document.write(getValue() + '<br/>');	//지역변수
+	document.write(scope + '<br/>'); //글로벌변수
+	
+	//4. 지역변수 범위
+	//	- var : 함수의 블록
+	// 	- let : 블록
+		
+	if(true){
+		var i = 100;
+		let j = 100;
+	document.write('j= ' + j +  '<br/>');
+	}
+	document.write('i= ' + i +  '<br/>');
+// 	document.write('j= ' + j +  '<br/>');
+
+	for(var a=0; a<3; a++){}
+	for(var b=0; b<4; b++){}
+	document.write('a= ' + a + '<br/>');
+	document.write('b= ' + b + '<br/>');
+
+	for(let c=0; c<5; c++){
+	document.write('c= ' + c + '<br/>');
+		
+	}
+	for(let d=0; d<6; d++){}
+	document.write('c= ' + c + '<br/>');
+	document.write('d= ' + d + '<br/>');
+	</script>
+</head>
+
+<body>
+
+  
+ </body>
+</html>

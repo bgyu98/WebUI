@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Date 객체</title>
+<script type="text/javascript">	
+ 	
+	var d = new Date('2022/10/20');
+	document.writeln( d  + '<br/>');
+	document.writeln( d.getYear()  + '<br/>');
+	document.writeln( d.getFullYear()  + '<br/>');
+	document.writeln( d.getMonth()  + '<br/>'); // + 1 해야됨
+	document.writeln( d.getDate()  + '<br/>');
+	document.writeln( d.getDay()  + '<hr/>'); //일요일 0 월요일 1~
+
+	let today = new Date();
+	document.writeln( today  + '<br/>');
+	document.writeln( today.toLocaleString()  + '<br/>');
+	document.writeln( today.toGMTString()  + '<br/>');
+	document.writeln( today.toDateString()  + '<hr/>');
+	
+	// 2025-05-12
+	let day = new Date();
+	day.setFullYear('2025');
+	day.setMonth(4);
+	day.setDate('12');
+	document.writeln( day + '<hr/>');
+	
+	let today1 = new Date();
+	today1.setMonth(today1.getMonth() - 3);
+	document.writeln( today1.toDateString()  + '<br/>');
+	//현재날짜에서 20일을 더하면
+	today1.setDate(0);
+// 	today1.setDate(today1.getDate() + 20);
+	document.writeln( today1.toDateString() + '<hr/>');
+	 
+	
+	
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

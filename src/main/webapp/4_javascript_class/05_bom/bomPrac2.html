@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function(){
+		var sel=fm.dosi;
+		for(let i=0;i<sel.length;i++){
+			sel[i].onclick = function(){
+				opener.frm.result.value = this.value;
+			}
+		}
+		
+	}
+</script>
+</head>
+<body>
+
+<form name="fm">
+	<input type='text' name='text1' size='20'/><hr/>
+	<input type='radio' name='dosi' value='가산' onclick='sel()'/> 가산<br/>
+	<input type='radio' name='dosi' value='판교' onclick='sel()'/> 판교<br/>
+	<input type='radio' name='dosi' value='으악' onclick='sel()'/> 부평<br/>
+</form>
+</body>
+</html>

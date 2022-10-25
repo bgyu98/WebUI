@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Javascript 객체지향  - 상속 </title>
+</head>
+<body>
+	<script>
+		// 부모클래스
+		var Animal = function(){ };
+		Animal.prototype = {
+			sound : function(){
+				document.writeln('울부짖다 <br/>');
+			},
+			move : function() {
+				document.writeln('동물은 움직인다 <br/>');
+			}
+		};
+
+		// 자식클래스
+		var Dog = function(){}
+		Dog.prototype = new Animal();	// javascript 상속관계
+		
+		var dog = new Dog();
+		dog.sound();
+		dog.move();
+		
+		Dog.prototype.sound = function(){
+			document.writeln('멍멍멍 <br/>');
+		}
+		dog.sound();
+
+		/*
+			Human 클래스는 Animal 클래스를 상속받음
+			Human 클래스의 객체를 생성하여 변수 ingan에 지정함
+			Animal 클래스의 move 함수를 오버라이딩 하여
+			move함수 호출시 '인간은 두 발로 걸음' 라고 출력
+		*/
+		
+		let Human = function(){	}		
+		Human.prototype = new Animal();		//Animal클래스를 Human클래스에 상속시킴
+		
+		let ingan = new Human();			//ingan이라는 변수를 만들고 Human객체를 지정
+		
+		Human.prototype.move = function(){	//Human에서 Animal클래스의 move를 오버라이딩
+			document.writeln('인간은 두 발로 걸음 <br/>');
+		}
+		ingan.move();						// 호출
+		
+
+	</script>
+</body>
+</html>

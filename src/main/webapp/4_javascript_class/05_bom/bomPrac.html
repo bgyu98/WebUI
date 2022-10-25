@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function(){
+	winObj = window.open("bomPrac2.html", "", "width=350, height=300");
+	var sel = document.frm.si;
+	sel.onchange=function(){
+		
+		winObj.fm.text1.value = frm.si.value;
+		}
+}
+
+</script>
+</head>
+<form name="frm">
+<body>
+	<select name="si">
+	<option value='서울시'> 서울시 </option>
+	<option value='부천시'> 부천시 </option>
+	<option value='광명시'> 광명시 </option>
+	</select>
+	<br/>
+	<input type="text" name="result" size='20'>
+	<br/>
+	<br/>
+
+</form>
+	
+
+</body>
+</html>

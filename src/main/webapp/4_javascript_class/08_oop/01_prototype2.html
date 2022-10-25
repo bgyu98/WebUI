@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Javascript 객체지향 </title>
+</head>
+<body>
+<script>
+
+// 이름, 국어점수, 영어점수, 수학점수를 처리하는 클래스 선언
+	//해당 클래스 안에는 국,영,수 총점을 구하는 함수를 가진
+		//클래스 Student 선언
+		
+function Student(name, kor, eng, mat){
+	this.name = name;
+	this.kor = kor;
+	this.eng = eng;
+	this.mat = mat;
+}
+
+// 자바스크립트의 클래스는 동적인 추가
+/*Student.prototype.sum = function(){
+	return this.kor + this.eng + this.mat;
+}
+
+Student.prototype.showInfo = function(){
+	return (this.name + ":" + this.sum() + '<hr/>');
+}*/
+Student.prototype = {
+		showInfo : function(){
+				   return (this.name + ":" + this.sum() + '<hr/>');
+				   },
+		sum 	 : function(){
+				   return this.kor + this.eng + this.mat;
+				   }
+}
+
+
+let kim = new Student("김길동", 80,50,90);
+document.write(kim.name + "님 " + kim.sum() + "점" +'<br/>');
+
+let hong = new Student("홍길동", 10,50,20);
+document.write(hong.name + "님 " + hong.sum() + "점"+ '<br/>');
+
+document.write(kim.showInfo());
+
+document.write(hong.showInfo());
+
+
+</script>
+</body>
+</html>
